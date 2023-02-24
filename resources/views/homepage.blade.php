@@ -1,229 +1,401 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>phoenix.com</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('tailwind/css/main.css') }}">
+    <title>TechNiche Solutions</title>
+    <script src="https://kit.fontawesome.com/d9e760cb08.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+    .hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
 
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
 
-  <style>
-    .btn1 {
-      display: inline-block;
-      word-spacing: 10px;
+.hamburger-middle {
+  transform: translateY(7px);
+}
 
-    }
-  </style>
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+    </style>
 </head>
-
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg fixed-top bg-info">
+   <nav class="relative container mx-auto p-6">
+        <div class="flex items-center justify-between">
+            <div class="pt-2">
+                <img src="{{URL::asset('/tailwind/image/')}}" alt="phoenix">
+            </div>
+            <div class="hidden md:flex space-x-7 text-black">
+                <a href="" class="hover:text-green-400">Home</a>
+                <a href="" class="hover:text-green-400">About </a>
+                <a href="" class="hover:text-green-400">Services</a>
+                <a href="" class="hover:text-green-400">Our Team</a>
+                <a href="" class="hover:text-green-400">Pricing</a>
+                <a href="" class="hover:text-green-400">Contact</a>
+            </div>
+            <a href="" class="hidden md:block p-3 px-6 pt-2 text-white bg-blue-400 rounded-full baseline hover:bg-green-300">Get Started</a>
+            <!--hamburger icon-->
+            
+            <button id="menu-btn" class="open block hamburger md:hidden focus:outline-none">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+        </div>
+        <!--mobile menu-->
+        <div class="md:hidden">
+            <div id="menu" class="absolute flex flex-col items-center self-end  py-8 mt-10 space-y-6 font-bold
+             bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+             <a href="" class="hover:text-blue-400">Home</a>
+             <a href="" class="hover:text-blue-400">About </a>
+             <a href="" class="hover:text-blue-400">Services</a>
+             <a href="" class="hover:text-blue-400">Our Team</a>
+             <a href="" class="hover:text-blue-400">Pricing</a>
+             <a href="" class="hover:text-blue-400">Contact</a>
 
-      <a class="navbar-brand" href="#">
-        <img src="Company2.png" alt="" width="100" height="94" class="d-inline-block align-text-top">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <h4>Phoenix</h4>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"><strong>Home</strong></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="http://localhost/phoenix/about.php"><strong>About Us</strong></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" href="#"><strong>Team</strong></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" href="services"><strong>Services</strong></a>
-          </li>
-
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <strong>Products</strong>
-            </a>
-            <ul class="dropdown-menu bg-info">
-              <li><a class="dropdown-item" href="#"></a></li>
-              <li><a class="dropdown-item" href="#">App Development</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Web Development</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Projects</a></li>
-              <li><a class="dropdown-item" href="http://localhost/phoenix/price.php">Pricing</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" href="registration"><i class="fa-solid fa-user-plus"><strong></i>Sign_Up</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="userlogin"><i class="fa-solid fa-right-to-bracket"></i></span><strong>Login</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="adminlogin"><i class="fa-solid fa-user-plus"><strong></i>Admin</strong></a>
-        </li>
-      </ul>
+            
+            </div>
+        </div>
     </nav>
-  </div>
+    
+    <!--heroo section-->
+    <section id="hero">
+        <div class="container mx-auto flex flex-col-reverse m items-center px-5 mt-10 max-w-6xl gap-x-5 md:px-2 md:flex-row ">
+            <!--writings on the left side-->
+            <div class=" flex flex-col flex-wrap md:w-1/2">
+                <h1 class="text-4xl font-bold text-center mb-32 md:text-left">
+                    TechNiche
+                </h1>
+                <p class="text-justify mb-28 p-3">
+                    Phoenix Company Limited is an IT company that majors on building websites,
+                    Mobile Apps. It also deals with software installations and Computer Servicing and Repairs.
+                     We are a team dedicted to solve problems using computers and also create employments to people 
+                     who are enthuthiastic on the Technology world. We have different proffesions towards the building 
+                     of the company where we can solve almost all computer related problems. The company also practices CIA 
+                     , It maintains the confidentiality of data or information, Integrity of data given is maintained such 
+                     that it is not manipulated or changed and Availability of data whenever it is needed.
+                </p>
+                <div class="flex justify-center md:justify-start space-x-6 mt-32">
+                    <a href="" class="md:block p-3  px-6 pt-2 text-white bg-red-400 rounded-full baseline hover:bg-green-300 ">Learn More</a>
+                    <a href="" class="md:block p-3 px-6 pt-2 text-white bg-red-400 rounded-full baseline hover:bg-green-300">Get in Touch</a>  
+    
+                </div>
+            </div>
+            <!--image on the right side-->
+            <div class="">
+                <img src="{{URL::asset('/tailwind/image/Comp.jpeg')}}" alt="" height="70%" width="100%" class="p-3">
+            </div>          
+        </div>
+    </section>
+    <!-- our services -->
+    <section id="our services">
+        <div class=" px-7 mx-auto mt-32 text-center ">            
+            <h2 class="text-4xl font-bold text-center">Services</h2>
+            <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
+                <div class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-300 md:w-1/3 m-3">
+                    <h5 class="text-lg font-bold">
+                        Web App and Website Development</h5>
+                        <i class="fa-solid fa-laptop-code fa-2xl"></i>
 
-  <div class="container-fluid">
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="https://cdn.pixabay.com/photo/2015/09/17/17/25/code-944499_960_720.jpg" class="d-block w-100 h-auto" alt="">
+                    <p class="text-sm text-black">Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Officiis autem vero eaque assumenda fuga ipsa,
+                         laudantium at omnis corrupti facere rem dignissimos consequuntur 
+                         quis minus quas consectetur repudiandae commodi tenetur aspernatur 
+                         cum quos atque voluptate. Ipsa magnam cumque asperiores est iste hic 
+                         blanditiis animi cupiditate fugit, officia inventore, aspernatur nemo.
+                        </p>
+                </div>
+                <div class="md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-300 md:w-1/3 m-3">
+                    
+                    <h5 class="text-lg font-bold">Computer Sales and Repair</h5>
+                    <i class="fa-solid fa-wrench fa-2xl"></i>
+                    <p class="text-sm text-black">Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Officiis autem vero eaque assumenda fuga ipsa,
+                         laudantium at omnis corrupti facere rem dignissimos consequuntur 
+                         quis minus quas consectetur repudiandae commodi tenetur aspernatur 
+                         cum quos atque voluptate. Ipsa magnam cumque asperiores est iste hic 
+                         blanditiis animi cupiditate fugit, officia inventore, aspernatur nemo.
+                        </p>
+                </div>
+                <div class="md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-300 md:w-1/3 m-3">
+                    
+                    <h5 class="text-lg font-bold">IT Support Services</h5>
+                    <i class="fa-solid fa-wrench fa-2xl"></i>
+                    <p class="text-sm text-black">Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Officiis autem vero eaque assumenda fuga ipsa,
+                         laudantium at omnis corrupti facere rem dignissimos consequuntur 
+                         quis minus quas consectetur repudiandae commodi tenetur aspernatur 
+                         cum quos atque voluptate. Ipsa magnam cumque asperiores est iste hic 
+                         blanditiis animi cupiditate fugit, officia inventore, aspernatur nemo.
+                        </p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:space-x-6">
+                <div class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-300 md:w-1/3 m-3">
+                    <h5 class="text-lg font-bold">
+                        Web design</h5>
+                        <i class="fa-solid fa-laptop-code fa-2xl"></i>
+
+                    <p class="text-sm text-black">Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Officiis autem vero eaque assumenda fuga ipsa,
+                         laudantium at omnis corrupti facere rem dignissimos consequuntur 
+                         quis minus quas consectetur repudiandae commodi tenetur aspernatur 
+                         cum quos atque voluptate. Ipsa magnam cumque asperiores est iste hic 
+                         blanditiis animi cupiditate fugit, officia inventore, aspernatur nemo.
+                        </p>
+                </div>
+                <div class="md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-300 md:w-1/3 m-3">
+                    
+                    <h5 class="text-lg font-bold">Android Apps Development</h5>
+                    <i class="fa-solid fa-wrench fa-2xl"></i>
+                    <p class="text-sm text-black">Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Officiis autem vero eaque assumenda fuga ipsa,
+                         laudantium at omnis corrupti facere rem dignissimos consequuntur 
+                         quis minus quas consectetur repudiandae commodi tenetur aspernatur 
+                         cum quos atque voluptate. Ipsa magnam cumque asperiores est iste hic 
+                         blanditiis animi cupiditate fugit, officia inventore, aspernatur nemo.
+                        </p>
+                </div>
+                <div class="md:flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-300 md:w-1/3 m-3">
+                    
+                    <h5 class="text-lg font-bold">Computer Networking</h5>
+                    <i class="fa-solid fa-wrench fa-2xl"></i>
+                    <p class="text-sm text-black">Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Officiis autem vero eaque assumenda fuga ipsa,
+                         laudantium at omnis corrupti facere rem dignissimos consequuntur 
+                         quis minus quas consectetur repudiandae commodi tenetur aspernatur 
+                         cum quos atque voluptate. Ipsa magnam cumque asperiores est iste hic 
+                         blanditiis animi cupiditate fugit, officia inventore, aspernatur nemo.
+                        </p>
+                </div>
+            </div>
+            <div class="my-16">
+                <a href="" class=" p-3 px-6 pt-2 text-white bg-red-400 rounded-full baseline hover:bg-green-300">See More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="our portfolio"><!--portfolio-->
+        <div class=" px-5 mx-auto mt-32 text-center">
+            <h2 class="text-4xl font-bold text-center">Portfolio</h2>
+            <i class="text-center">what we've created so far</i>
+            <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
+                <div class="flex flex-col items-center p-6 space-y-6 rounded-lg md:w-1/3">
+                    <div class=" rounded overflow-hidden shadow-lg">
+                        <img class="w-full" src="{{URL::asset('/tailwind/image/carhire.jpg')}}" alt="cash exchange">
+                        <div class="px-6 py-4">
+                          <div class="font-bold text-xl mb-2">Car hire Management System</div>
+                          <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                          </p>
+                          <div class="my-16">
+                            <a href="" class=" p-3 px-6 pt-2 text-white bg-red-400 rounded-full baseline hover:bg-green-300">request pricing</a>
+                        </div>
+                        </div>
+                      </div>
+
+                </div>
+                <div class="md:flex flex-col items-center p-6 space-y-6 rounded-lg md:w-1/3">
+                    <div class="rounded overflow-hidden shadow-lg">
+                        <img class="w-full" src="{{URL::asset('/tailwind/image/chatbot.jpg')}}" alt="chatbot image">
+                        <div class="px-6 py-4">
+                          <div class="font-bold text-xl mb-2">ChatBot</div>
+                          <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                          </p>
+                          <div class="my-16">
+                            <a href="" class=" p-3 px-6 pt-2 text-white bg-red-400 rounded-full baseline hover:bg-green-300">request pricing</a>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="md:flex flex-col items-center p-6 space-y-6 rounded-lg  md:w-1/3">
+                    <div class=" rounded overflow-hidden shadow-lg">
+                        <img class="w-full" src="{{URL::asset('/tailwind/image/grocery.jpg')}}" alt="grocery image">
+                        <div class="px-6 py-4">
+                          <div class="font-bold text-xl mb-2">Groceries Order and Delivery System</div>
+                          <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                          </p>
+                          <div class="my-16">
+                            <a href="" class=" p-3 px-6 pt-2 text-white bg-red-400 rounded-full baseline hover:bg-green-300">request pricing</a>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
         </div>
 
-        <div class="carousel-item" data-bs-interval="3000">
-          <img src="https://cdn.pixabay.com/photo/2014/08/26/21/27/service-428538_960_720.jpg" class="d-block w-100 h-auto" alt="">
+    </section>
+   <!--
+           <div class="my-16">
+                <a href="" class=" p-3 px-6 pt-2 text-white bg-red-400 rounded-full baseline hover:bg-green-300">Get in Touch</a>
+            </div>
+   -->
+x
+    <section>
+        <!--values-->
+    </section>
+    <!--contact us  -->
+    <section>
+        <!--contact us-->
+        <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
+            <h2 class="text-4xl font-bold text-center mb-32">HAVE SOME QUESTIONS?</h2>
+            <div class="container mx-auto flex flex-col-reverse items-center px-5  md:px-2 md:flex-row">
+                <div class="text-center">
+                    <img src="{{URL::asset('/tailwind/image/mail.png')}}" height="60%" width="60%">
+                </div>
+              <form action="{{ route('store-message') }}" method="POST" enctype="multipart/form-data">
+
+              {{ csrf_field() }}
+                  @if(Session::has('success'))
+                  <div class="alert alert-success">{{Session::get('success')}}</div>
+                  @endif
+                  @if(Session::has('fail'))
+                  <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                  @endif
+
+                <div class="">
+                    <div class="field">
+                        <label class="label">Full Name</label>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="full name" name="name">
+                        </div>
+                      </div>                                            
+                      <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input class="input" type="email" placeholder="someone@gmail.com" name="email">
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">Phone</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input class="input" type="text" placeholder="Phone Number" name="phone">
+                        </div>
+                      </div>                                           
+                      <div class="field">
+                        <label class="label">Message</label>
+                        <div class="control">
+                        <input type="text" class="input" name="enquiry">
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+              </form>                    
+                </div>
+            </div>
         </div>
 
-        <div class="carousel-item">
-          <img src="https://cdn.pixabay.com/photo/2017/05/16/23/32/spyware-2319403_960_720.jpg" class="d-block w-100 h-auto" alt="">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-  </div>
-
-  <div class="container-fluid">
-    <div class="card mb-3" style="max-width: 5400px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="https://cdn.pixabay.com/photo/2017/10/10/21/47/computer-2838920_960_720.jpg" class="img-fluid rounded-start" alt="">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h2 class="card-title"><b>ABOUT US</b></h2>
-            <p class="card-text"> Phoenix Company Limited is an IT company that majors on building websites, Mobile Apps.
-              It also deals with software installations and Computer Servicing and Repairs.
-              We are a team dedicted to solve problems using computers and also create employments to people who are enthuthiastic on the Technology world.
-              We have different proffesions towards the building of the company where we can solve almost all computer related problems.
-              The company also practices CIA i.e It maintains the confidentiality of data or information, Integrity of data given is maintained
-              such that it is not manipulated or changed and Availability of data whenever it is needed.</p>
-
+    </section>
+    
+    <!--footer-->
+    <footer class="bg-blue-300 mt-3">
+        <div
+          class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0"
+        >
+          <div
+            class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start"
+          >
+            <div class="mx-auto my-6 text-center text-white md:hidden">
+              Copyright &copy; 2023, All Rights Reserved
+            </div>
+            <div>
+              <img src="image/logo-white.svg" class="h-8" alt="" />
+            </div>
+            <div class="flex justify-center space-x-4">
+              <a href="#">
+                <img src="image/icon-facebook.svg" alt="" class="h-8" />
+              </a>
+              <a href="#">
+                <img src="image/icon-youtube.svg" alt="" class="h-8" />
+              </a>
+              <a href="#">
+                <img src="image/icon-twitter.svg" alt="" class="h-8" />
+              </a>
+              <a href="#">
+                <img src="image/icon-pinterest.svg" alt="" class="h-8" />
+              </a>
+              <a href="#">
+                <img src="image/icon-instagram.svg" alt="" class="h-8" />
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-around space-x-32">
+            <div class="flex flex-col space-y-3 text-white">
+              <a href="#" class="hover:text-green-300">Home</a>
+              <a href="#" class="hover:text-green-300">Pricing</a>
+              <a href="#" class="hover:text-green-300">Products</a>
+              <a href="#" class="hover:text-green-300">About</a>
+            </div>
+            <div class="flex flex-col space-y-3 text-white">
+              <a href="#" class="hover:text-green-300">Careers</a>
+              <a href="#" class="hover:text-green-300">Community</a>
+              <a href="#" class="hover:text-green-300">Privacy Policy</a>
+            </div>
+          </div>
+  
+          <!-- Input Container -->
+          <div class="flex flex-col justify-between">
+            <form>
+              <div class="flex space-x-3">
+                <input
+                  type="text"
+                  class="flex-1 px-4 rounded-full focus:outline-none"
+                  placeholder="Updated in your inbox"
+                />
+                <button
+                  class="px-6 py-2 text-white rounded-full bg-red-400 hover:bg-green-300 focus:outline-none"
+                >
+                  Go
+                </button>
+              </div>
+            </form>
+            <div class="hidden text-white md:block">
+              Copyright &copy; 2023, All Rights Reserved
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="container-fluid">
-
-    <figure class="text-center">
-      <blockquote class="blockquote">
-        <h1>Our Digital Expertise</h1>
-      </blockquote>
-    </figure>
-
-    <div class="row align-items-center">
-      <div class="col">
-        <h2>Branding</h2>
-        <div class="card" style="width: 18rem;">
-          <img src="https://cdn.pixabay.com/photo/2018/08/29/10/21/business-3639565_960_720.jpg" class="card-img-top" alt="">
-          <div class="card-body">
-            <p class="card-text">Brand identity is fundamental for every business. Your business needs a unique look and feel to make it
-              recognizable in the global business ecosystem and Phoenix can do that for you.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <h2>Web Services</h2>
-        <div class="card" style="width: 18rem;">
-          <img src="https://cdn.pixabay.com/photo/2016/06/09/10/00/smartphone-1445489_960_720.jpg" class="card-img-top" alt="">
-          <div class="card-body">
-            <p class="card-text">Online presence is key to ensure a business effectively reaches its customers.
-              Phoenix helps you achieve effective outreach by designing and developing custom websites for your business.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <h2>Social Media</h2>
-        <div class="card" style="width: 18rem;">
-          <img src="https://cdn.pixabay.com/photo/2014/08/22/15/27/facebook-424521_960_720.jpg" class="card-img-top" alt="">
-          <div class="card-body">
-            <p class="card-text">Social media marketing is a critical element in staying connected with your audience.
-              Working independently of, or side-by-side with you, we help keep your social community engaged.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  </div>
-
-  <div class="container-fluid">
-    <div class="b-example-divider"></div>
-
-    <div class="container-fliud bg-light">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-        <div class="col mb-3">
-          <a href="http://localhost/phoenix/Home.php#" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-            <img src="Company2.png" alt="" width="100" height="94" class="d-inline-block align-text-top">
-
-          </a>
-          <p class="text-muted">&copy; phoenix2022</p>
-        </div>
-
-        <div class="col mb-3">
-
-        </div>
-
-        <div class="col mb-3">
-          <h5>Contact us</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">0748174004-Linus Gatungo</li>
-            <li class="nav-item mb-2">0743784792-Jesse Kimani</li>
-            <li class="nav-item mb-2">Email-phoenix@gmail.com</li>
-
-          </ul>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Our Company</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Team</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Projects</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          </ul>
-        </div>
-
       </footer>
-    </div>
-  </div>
-  </div>
-
-  </div>
+    <script src="{{URL::asset('/tailwind/js/script.js')}}"></script>
 </body>
-
 </html>

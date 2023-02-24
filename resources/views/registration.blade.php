@@ -64,12 +64,13 @@
                   <form action="{{route('register-client')}}" method="post">
 
                   {{ csrf_field() }}
-                    @if(Session::has('success'))
-                    <div class="alert alert-success">{{Session::get('success')}}</div>
-                    @endif
-                    @if(Session::has('fail'))
-                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                    @endif
+                  @if(Session::has('success'))
+                  <div class="alert alert-success">{{Session::get('success')}}</div>
+                  @endif
+                  @if(Session::has('fail'))
+                  <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                  @endif
+
 
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example1cg">Enter Name</label>
@@ -87,7 +88,7 @@
                     </div>
 
                     <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" name="checkbox_field" required/>
                       <label class="form-check-label" for="form2Example3g">
                         I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
                       </label>

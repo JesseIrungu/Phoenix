@@ -32,7 +32,7 @@ class ClientsController extends Controller
     public function registerClient(Request $request)
     {
         $request->validate([
-            'name'=>'required',
+            'name'=>'required|string|alpha',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:4|max:10',
         ]);
@@ -80,9 +80,9 @@ class ClientsController extends Controller
     public function storeMessage(Request $request)
     {
         $request->validate([
-            'name'=>'required',
+            'name'=>'required|string|alpha',
             'email'=>'required',
-            'phone'=>'required',
+            'phone'=>'required|numeric',
             'enquiry'=>'required',
         ]);
     
@@ -95,7 +95,7 @@ class ClientsController extends Controller
 
     $res = $enquiries ->save();
     if($res){
-        return back()->with('success','Request Received Successfully');
+        return back()->with('success','Request Submitted Successfully');
     }
     else{
         return back()->with('fail','Something was wrong');

@@ -104,7 +104,7 @@
     </div>
 @endif
      
-<form action="{{ route('store-message') }}" method="POST" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data">
 {{ csrf_field() }}
     
     <div class="form-group">
