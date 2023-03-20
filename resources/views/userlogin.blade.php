@@ -115,6 +115,8 @@
                     <button class="btn btn-block btn-primary" type="submit">Login</button>
             </div>
               <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="registration" class="link-danger">Register here</a></p>
+              <br><br>
+              <p class="small fw-bold mt-2 pt-1 mb-0"> Or <a href="adminlogin" class="link-danger">Login as Admin</a></p>
 
           </form>
         </div>

@@ -80,7 +80,7 @@ class ClientsController extends Controller
     public function storeMessage(Request $request)
     {
         $request->validate([
-            'name'=>'required|string|alpha',
+            'name'=>'required|string',
             'email'=>'required',
             'phone'=>'required|numeric',
             'enquiry'=>'required',
@@ -95,7 +95,7 @@ class ClientsController extends Controller
 
     $res = $enquiries ->save();
     if($res){
-        return back()->with('success','Request Submitted Successfully');
+        return back()->with('success','Message Sent Successfully');
     }
     else{
         return back()->with('fail','Something was wrong');
