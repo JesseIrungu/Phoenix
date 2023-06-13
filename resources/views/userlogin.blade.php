@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>User Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
   </head>
@@ -10,42 +10,27 @@
     <div class="container-sm">
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Phoenix</a>
+    <a class="navbar-brand" href="#">TechNiche</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="homepage">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="homepage">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Portofolio</a>
+          <a class="nav-link" href="homepage">Portofolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacts</a>
+          <a class="nav-link" href="homepage">Contacts</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Products
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Pricing</a></li>
-            <li><a class="dropdown-item" href="#">Projects</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Websites</a></li>
-            <li><a class="dropdown-item" href="#">Apps</a></li>
-          </ul>
-        </li>
         </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
     </div>
   </div>
 </nav>
@@ -107,9 +92,7 @@
                 <label class="form-check-label" for="form2Example3">
                   Remember me
                 </label>
-              </div>
-              <a href="#!" class="text-body">Forgot password?</a>
-            </div>
+              
 
             <div class="form-group ">
                     <button class="btn btn-block btn-primary" type="submit">Login</button>

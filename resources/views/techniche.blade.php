@@ -164,7 +164,7 @@ footer{
               <a href="#ourTeam" class="hover:text-blue-400">Our Team</a>
               <a href="#contactus" class="hover:text-blue-400">Contact</a>
             </div>
-            <a href="userlogin" class="hidden md:block p-3 px-6 pt-2 text-white bg-blue-400 rounded-full baseline hover:bg-green-300">Get Started</a>
+            <a href="homepage" class="hidden md:block p-3 px-6 pt-2 text-white bg-blue-400 rounded-full baseline hover:bg-green-300">Logout</a>
             <!--hamburger icon-->
             <button id="menu-btn" class="open block hamburger md:hidden focus:outline-none">
                 <span class="hamburger-top"></span>

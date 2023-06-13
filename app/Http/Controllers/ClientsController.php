@@ -29,6 +29,10 @@ class ClientsController extends Controller
         return view("phoenixtech");
     }
 
+    public function techniche(){
+        return view("techniche");
+    }
+
     public function registerClient(Request $request)
     {
         $request->validate([
@@ -63,7 +67,7 @@ class ClientsController extends Controller
         if($clients){
             if(Hash::check($request->password,$clients->password)){
                 $request->session()->put('loginId', $clients->id);
-                return redirect('phoenixtech');
+                return redirect('techniche');
             }
             else{
                 return back()->with('fail','Wrong Password !!');

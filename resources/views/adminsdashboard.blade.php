@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>phoenix.com</title>
+  <title>techniche admin</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -32,7 +32,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">
-              <h4>Phoenix</h4>
+              <h4>TechNiche</h4>
             </a>
           </li>
           <li class="nav-item">
@@ -72,7 +72,7 @@
         <div class="col-md-8">
           <div class="card-body">
             <h2 class="card-title"><b>ABOUT US</b></h2>
-            <p class="card-text"> Phoenix Company Limited is an IT company that majors on building websites, Mobile Apps.
+            <p class="card-text"> TechNiche is an ICT company that majors on building websites and Mobile Apps.
               It also deals with software installations and Computer Servicing and Repairs.
               We are a team dedicted to solve problems using computers and also create employments to people who are enthuthiastic on the Technology world.
               We have different proffesions towards the building of the company where we can solve almost all computer related problems.
@@ -141,7 +141,7 @@
             <img src="Company2.png" alt="" width="100" height="94" class="d-inline-block align-text-top">
 
           </a>
-          <p class="text-muted">&copy; phoenix2022</p>
+          <p class="text-muted">&copy; TechNiche 2023</p>
         </div>
 
         <div class="col mb-3">
@@ -153,7 +153,7 @@
           <ul class="nav flex-column">
             <li class="nav-item mb-2">0748174004-Linus Gatungo</li>
             <li class="nav-item mb-2">0743784792-Jesse Kimani</li>
-            <li class="nav-item mb-2">Email-phoenix@gmail.com</li>
+            <li class="nav-item mb-2">Email- info@technichesolutions.co.ke</li>
 
           </ul>
         </div>

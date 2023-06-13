@@ -10,42 +10,27 @@
     <div class="container-sm">
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Phoenix</a>
+    <a class="navbar-brand" href="#">TechNiche</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="homepage">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="file:///C:/Users/Linus.Gatongo/Desktop/portofolio/services.html">Services</a>
+          <a class="nav-link" href="homepage">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Portofolio</a>
+          <a class="nav-link" href="homepage">Portofolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacts</a>
+          <a class="nav-link" href="homepage">Contacts</a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Products
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Websites</a></li>
-            <li><a class="dropdown-item" href="#">Apps</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Projects</a></li>
-            <li><a class="dropdown-item" href="file:///C:/Users/Linus.Gatongo/Desktop/portofolio/pricing.html">Pricing</a></li>
-          </ul>
-        </li>
         </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        
     </div>
   </div>
 </nav>

@@ -30,6 +30,7 @@ Route::get('/services',[ClientsController::class,'services']);
 Route::get('/userlogin',[ClientsController::class,'userLogin']);
 Route::get('/registration',[ClientsController::class,'registration']);
 Route::get('/phoenixtech',[ClientsController::class,'phoenixtech']);
+Route::get('/techniche',[ClientsController::class,'techniche']);
 Route::post('/register-client',[ClientsController::class,'registerClient'])->name('register-client');
 Route::post('/login-client',[ClientsController::class,'loginClient'])->name('login-client');
 Route::get('/clientsdashboard',[ClientsController::class,'clientsDashboard']);
